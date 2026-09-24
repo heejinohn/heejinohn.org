@@ -1,0 +1,20 @@
+{{- define "title" }}Blog - {{ site.Title }}{{ end -}}
+
+{{- define "content" }}
+<section id="archive" class="archive">
+  {{- /* Posts newest first, with a year heading whenever the year changes. */ -}}
+  {{- range .Pages.GroupByDate "2006" }}
+  <div class="collection-title">
+    <h2 class="archive-year">{{ .Key }}</h2>
+  </div>
+    {{- range .Pages }}
+  <div class="archive-post">
+    <span class="archive-post-time">{{ .Date.Format "Jan 2" }}</span>
+    <span class="archive-post-title">
+      <a href="{{ .RelPermalink }}" class="archive-post-link">{{ .Title }}</a>
+    </span>
+  </div>
+    {{- end }}
+  {{- end }}
+</section>
+{{- end }}

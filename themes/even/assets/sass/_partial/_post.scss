@@ -1,0 +1,50 @@
+// ==============================
+// Post
+// ==============================
+
+.posts {
+  margin-bottom: $post-list-margin-bottom;
+  border-bottom: $post-border;
+
+    figure {
+    &.center {
+      text-align: center;
+    }
+
+    &.right {
+      text-align: right;
+    }
+
+    &.left {
+      text-align: left;
+    }
+
+    figcaption p {
+      color: #4a4a4a;
+      font-size: 0.8rem;
+    }
+  }
+}
+
+.posts h3 {
+	margin-top: 1.5em;
+	margin-bottom: -0.5em;
+}
+
+.post {
+  padding: $post-padding;
+
+  & + .post {
+    border-top: $post-border;
+  }
+
+  @import '_post/header';
+  @import '_post/toc';
+  @import '_post/content';
+  @import '_post/copyright';
+  @import '_post/reward';
+  @import '_post/footer';
+  @import '_post/outdated';
+}
+
+

@@ -1,0 +1,55 @@
+baseURL = "https://heejinohn.org/"
+locale = "en-US"
+defaultContentLanguage = "en"
+title = "heejinohn.org"
+theme = "even"
+enableRobotsTXT = true
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+[menu]
+  [[menu.main]]
+    name = "Research"
+    url = "/research/"
+    weight = 1
+  [[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 2
+  [[menu.main]]
+    name = "CV"
+    url = "/cv.pdf"
+    weight = 3
+
+[permalinks]
+  blog = "/blog/:year/:month/:slug/"
+
+[params]
+  version = "4.x"
+  since = "2026"
+  logoTitle = "heejin ohn"
+  description = "Heejin Ohn, accounting researcher."
+  # Change this one line when the appointment changes.
+  affiliation = 'Assistant Professor of Accounting at the <a href="https://www.ou.edu/price">Price College of Business</a>, University of Oklahoma'
+  dateFormatToUse = "January 2, 2006"
+  fancybox = false
+  mathjax = false
+  toc = false
+  postMetaInFooter = false
+  customCSS = ["site.css"]
+  # Public profile links shown in the header (icons live in static/icons/).
+  [[params.links]]
+    name = "GitHub"
+    url = "https://github.com/heejinohn"
+    icon = "github"
+  [[params.links]]
+    name = "Google Scholar"
+    url = "https://scholar.google.com/citations?hl=en&user=2n5Ev_MAAAAJ"
+    icon = "googlescholar"
+  [params.publicCDN]
+    enable = true
+    jquery = '<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>'
+    slideout = '<script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js"></script>'
+  [params.author]
+    name = "Heejin Ohn"

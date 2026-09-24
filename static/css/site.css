@@ -1,0 +1,4 @@
+/* Tell the browser the page is dark, so scrollbars and form controls match. */
+:root { color-scheme: dark; }
+
+.icon-svg { width: 0.9em; height: 0.9em; vertical-align: -0.05em; }

@@ -1,0 +1,25 @@
+<div class="logo-wrapper scp">
+  <a href="{{ "/" | relLangURL }}" class="logo">
+    {{- if .Site.Params.logoTitle -}}
+      {{ .Site.Params.logoTitle }}
+    {{- else -}}
+      {{ .Site.Title }}
+    {{- end -}}</a>&thinsp; &middot; &thinsp; 
+
+<a href="https://mastodon.social/@kjhealy" class="logo" title="Mastodon"><img class="icon-svg" src = "/icons/mastodon.svg"></a>
+<a href="https://github.com/kjhealy" class="logo" title="GitHub"><img class="icon-svg" src = "/icons/github.svg"></a>
+<a href="https://scholar.google.com/citations?user=YWEuPuIAAAAJ&hl=en" class="logo" title="Google Scholar"><img class="icon-svg" src = "/icons/googlescholar.svg"></a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    {{ range .Site.Menus.main -}}
+      <li class="menu-item">
+        <a class="menu-item-link" href="{{ .URL | safeURL }}">{{ .Name }}</a>
+      </li>
+    {{- end }}
+  </ul>
+</nav>
+
+
+

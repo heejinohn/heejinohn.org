@@ -1,0 +1,9 @@
+{{- /* One place that formats a paper's citation from its front matter. */ -}}
+{{- with .Params.authors }}{{ partial "authors.html" . }}. {{ end -}}
+{{- with .Params.year }}{{ . }}. {{ end -}}
+&ldquo;<a href="{{ .RelPermalink }}">{{ .Title }}</a>.&rdquo;
+{{- with .Params.journal }} <em>{{ . }}</em>
+  {{- with $.Params.volume }} {{ . }}{{ end -}}
+  {{- with $.Params.issue }}({{ . }}){{ end -}}
+  {{- with $.Params.pages }}: {{ . }}{{ end -}}.
+{{- end -}}

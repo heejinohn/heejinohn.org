@@ -1,0 +1,19 @@
+{{- define "content" -}}
+
+<p>I am {{ site.Params.affiliation | safeHTML }}. I study how investors and researchers acquire and measure accounting information. &rarr; <a href="/about/"><em>More about me.</em></a></p>
+
+<section class="archive">
+<h1>Research</h1>
+{{ partial "paper-list.html" site }}
+<p>&rarr; <a href="/cv.pdf"><em>Curriculum Vitae in</em> <span class="scp">pdf</span></a></p>
+</section>
+
+{{- /* Shows only once a first post exists in content/blog/. */ -}}
+{{ with first 10 (where site.RegularPages.ByDate.Reverse "Section" "blog") }}
+<section class="archive">
+<h1>Recent Writing</h1>
+  {{ range $i, $p := . }}{{ if $i }} &middot; {{ end }}<a href="{{ $p.RelPermalink }}">{{ $p.Title }}</a>{{ end }}
+</section>
+{{ end }}
+
+{{- end -}}

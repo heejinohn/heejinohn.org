@@ -1,0 +1,2 @@
+{{- /* "A", "A and B", or "A, B, and C" */ -}}
+{{- if eq (len .) 2 }}{{ delimit . " and " }}{{ else }}{{ delimit . ", " ", and " }}{{ end -}}

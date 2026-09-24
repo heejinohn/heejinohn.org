@@ -1,0 +1,24 @@
+<div class="logo-wrapper scp">
+  <a href="{{ "/" | relLangURL }}" class="logo">
+    {{- site.Params.logoTitle | default site.Title -}}</a>&thinsp; &middot; &thinsp;
+{{- /* Profile links come from [[params.links]] in hugo.toml. */ -}}
+{{ range site.Params.links }}
+<a href="{{ .url }}" class="logo" title="{{ .name }}" target="_blank" rel="me noopener"><img class="icon-svg" src="/icons/{{ .icon }}.svg" alt="{{ .name }}"></a>
+{{- end }}
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    {{ range site.Menus.main -}}
+      <li class="menu-item">
+        <a class="menu-item-link" href="{{ .URL | safeURL }}">{{ .Name }}</a>
+      </li>
+    {{- end }}
+    {{- /* Blog appears in the menu only once a published post exists. */ -}}
+    {{ if where site.RegularPages "Section" "blog" }}
+      <li class="menu-item">
+        <a class="menu-item-link" href="/blog/">Blog</a>
+      </li>
+    {{- end }}
+  </ul>
+</nav>

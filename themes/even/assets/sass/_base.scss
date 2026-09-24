@@ -1,0 +1,202 @@
+@import '_common/normalize';
+
+
+/*
+Body text Valkyrie A
+*/
+
+
+@font-face {
+font-family: valkyrie_ot_a;
+font-style: normal;
+font-weight: 400;
+font-stretch: normal;
+font-display: auto;
+src: url('/fonts/valkyrie_ot_a_regular.woff2') format('woff2');
+}
+
+@font-face {
+font-family: valkyrie_ot_a;
+font-style: italic;
+font-weight: 400;
+font-stretch: normal;
+font-display: auto;
+src: url('/fonts/valkyrie_ot_a_italic.woff2') format('woff2');
+}
+
+@font-face {
+font-family: valkyrie_ot_a;
+font-style: normal;
+font-weight: 600;
+font-stretch: normal;
+font-display: auto;
+src: url('/fonts/valkyrie_ot_a_bold.woff2') format('woff2');
+}
+
+@font-face {
+font-family: valkyrie_ot_a;
+font-style: italic;
+font-weight: 600;
+font-stretch: normal;
+font-display: auto;
+src: url('/fonts/valkyrie_ot_a_bold_italic.woff2') format('woff2');
+}
+
+
+/*
+Monospace
+*/
+
+@font-face {
+    font-family: 'Berkeley Mono';
+    src: url('/fonts/BerkeleyMono-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Berkeley Mono';
+    src: url('/fonts/BerkeleyMono-Bold.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Berkeley Mono';
+    src: url('/fonts/BerkeleyMono-Italic.woff2') format('woff2');
+    font-weight: normal;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Berkeley Mono';
+    src: url('/fonts/BerkeleyMono-BoldItalic.woff2') format('woff2');
+    font-weight: bold;
+    font-style: italic;
+}
+
+
+html {
+  font-size: $global-font-size;
+  box-sizing: border-box;
+  text-rendering: optimizeLegibility;
+  font-variant: oldstyle-nums, common-ligatures, ss08;
+  -moz-font-feature-settings: "onum", "liga", "calt", "ss08";
+  -webkit-font-feature-settings: "onum", "liga", "calt", "ss08";
+  font-feature-settings: "onum", "liga", "calt", "ss08";
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: $global-font-family;
+  line-height: $global-lineheight;
+  color: $global-font-color;
+  background: $global-background;
+  scroll-behavior: smooth;
+  border-top: 3px solid $theme-color;
+}
+
+@include max-screen() {
+  body {
+    border-top: 0;
+  }
+}
+
+::selection {
+  background: $theme-color;
+  color: #fff; 
+}
+
+// ::-webkit-scrollbar {
+//   width: 8px;
+//   height: 6px; 
+// }
+
+// ::-webkit-scrollbar-thumb {
+//   background: lighten($theme-color, 10%);
+//   border-radius: 5px;
+// }
+
+// ::-webkit-scrollbar-track {
+//   background: rgba(211, 211, 211, 0.4);
+//   border-radius: 5px;
+// }
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+a {
+  color: $global-link-color;
+  text-decoration: none;
+}
+
+@each $header, $size in $global-headings {
+  #{$header} {
+    font-size: $size;
+    font-family: $global-serif-font-family;
+    font-weight: normal;
+  }
+}
+
+.container {
+  margin: 0 auto;
+  width: $global-body-width;
+}
+
+@include max-screen() {
+  .container {
+    width: 100%;
+    box-shadow: -1px -5px 5px $gray;
+  }
+}
+
+.content-wrapper {
+  padding: $global-container-padding;
+}
+
+// make video fluid:
+// https://css-tricks.com/NetMag/FluidWidthVideo/Article-FluidWidthVideo.php
+// class video-container is the wrapper used by hexo youtube tag plugin
+.video-container {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	padding-top: 25px;
+	height: 0;
+}
+.video-container iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+
+.publication {  
+	padding-left: 0.25em;                            
+}                                      
+
+.publication ul {
+	width: 100%;
+ 	padding: 0 0 0 0; 
+ 	margin-left: 0; 
+ 	list-style: none;
+    }
+
+.publication li {
+	padding-left: 0;
+    list-style: none;
+    text-indent: -1.75em; 
+	margin: 0.33em 0em 0em 1.5em;
+}
+
+.scp {
+	font-variant: small-caps;
+  font-style: normal;
+}
+
+.smaller {
+	font-size: smaller;
+}

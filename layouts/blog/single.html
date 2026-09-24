@@ -1,0 +1,33 @@
+{{ define "content" -}}
+<article class="post">
+  <header class="post-header">
+    <h1 class="post-title">{{ .Title }}</h1>
+    <div class="post-meta">
+      <span class="post-time">{{ .Date.Format (site.Params.dateFormatToUse | default "January 2, 2006") }}</span>
+    </div>
+  </header>
+
+  <div class="post-content">
+    {{ .Content }}
+  </div>
+
+  <footer class="post-footer">
+    <nav class="post-nav">
+      {{ with .PrevInSection -}}
+        <a class="prev" href="{{ .RelPermalink }}">
+          <i class="iconfont icon-left"></i>
+          <span class="prev-text nav-default">{{ .Title }}</span>
+          <span class="prev-text nav-mobile">{{ T "prevPost" }}</span>
+        </a>
+      {{- end }}
+      {{ with .NextInSection -}}
+        <a class="next" href="{{ .RelPermalink }}">
+          <span class="next-text nav-default">{{ .Title }}</span>
+          <span class="next-text nav-mobile">{{ T "nextPost" }}</span>
+          <i class="iconfont icon-right"></i>
+        </a>
+      {{- end }}
+    </nav>
+  </footer>
+</article>
+{{- end }}

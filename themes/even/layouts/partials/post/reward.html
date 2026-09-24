@@ -1,0 +1,2 @@
+{{ if or .Params.reward (and .Site.Params.reward.enable (ne .Params.reward false)) -}}
+{{- end }}

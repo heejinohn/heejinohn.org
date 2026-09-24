@@ -1,0 +1,15 @@
+<!-- <div class="social-links"> -->
+<!-- </div> -->
+
+<div class="copyright">
+  <span class="power-by">
+    {{- $current := now.Format "2006" }}
+    &copy; 
+    {{ if ne .Site.Params.since $current -}}
+      {{ .Site.Params.since }} - 
+    {{ end }}
+    {{- $current }}
+    <span class="author">{{if .Site.Copyright }}{{ .Site.Copyright | safeHTML }}{{ else }}{{ .Site.Params.author.name |
+        safeHTML }}{{ end }}</span>
+  </span>
+</div>

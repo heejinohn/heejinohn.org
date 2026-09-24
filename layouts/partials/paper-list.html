@@ -1,0 +1,15 @@
+{{- /* Lists papers grouped by status. Call with the site as context: partial "paper-list.html" site */ -}}
+{{- $papers := where .RegularPages "Type" "paper" -}}
+{{- range slice "Published" "Working Papers" }}
+  {{- $status := . }}
+  {{- with where $papers "Params.status" $status }}
+<h3>{{ $status }}</h3>
+<ul class="publication">
+    {{- range .ByWeight }}
+  <li>{{ partial "citation.html" . }}
+    {{- with .Params.pdf }} <a class="scp" href="{{ . }}">&middot; pdf</a>{{ end }}
+    {{- with .Params.code }} <a class="scp" href="{{ . }}">&middot; code</a>{{ end }}</li>
+    {{- end }}
+</ul>
+  {{- end }}
+{{- end }}
