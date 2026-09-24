@@ -48,9 +48,9 @@ Korea University \hfill _Seoul, South Korea_
 Daniel W. Collins, Raunaq S. Pungaliya, Anand M. Vijh and H. Ohn. ``Assessing Type I Error and Power of Alternative Methods of Dealing with Nonlinear Omitted Variable Bias in Tests of Earnings Management.'' \textit{Journal of Accounting, Auditing \& Finance}.
 
 # WORKING PAPERS
-H. Ohn. ``Institutional Investors' Firm-Specific Information Acquisition during Inattention.''
-
 Daniel W. Collins, Jaewoo Kim and H. Ohn. \href{https://dx.doi.org/10.2139/ssrn.3138584}{``Do Mandatory Accounting Disclosures Impair Disclosing Firms' Competitiveness? Evidence from Mergers and Acquisitions.''}
+
+H. Ohn. ``Institutional Investors' Firm-Specific Information Acquisition during Inattention.''
 
 # PRESENTATIONS
 American Accounting Association Annual Meeting \hfill _San Francisco, CA_ \
