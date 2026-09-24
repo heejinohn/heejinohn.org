@@ -1,6 +1,7 @@
 {{- define "content" -}}
 
-<p>I am {{ site.Params.affiliation | safeHTML }}. I study how investors and researchers acquire and measure accounting information. &rarr; <a href="/about/"><em>More about me.</em></a></p>
+{{- /* Bio comes from content/about.md so it is written in one place. */ -}}
+{{ with site.GetPage "/about" }}{{ .Content }}{{ end }}
 
 <section class="archive">
 <h1>Research</h1>
