@@ -19,4 +19,5 @@ Edit files here, push to `main`, and GitHub rebuilds the CV and the website.
 - **New blog post:** `hugo new content blog/my-title.md`, write, then set
   `draft: false`.
 - **Preview locally:** `make preview` in the repository root, then open
-  http://localhost:1313.
+  http://localhost:1313. Pages update as you save; so does the CV PDF
+  (`/cv.pdf`, reload it after a few seconds). Stop with Ctrl-C.
