@@ -28,7 +28,7 @@ published:
 
 under_review:
   - slug: nonlinear-omitted-variable-bias
-    title: "Assessing Type I Error and Power of Alternative Methods of Dealing with Nonlinear Omitted Variable Bias in Tests of Earnings Management"
+    title: "Methodology Versus Omitted Variable Biases in Event-Based Tests of Earnings Management"
     authors: [Daniel W. Collins, Raunaq S. Pungaliya, Anand M. Vijh, Heejin Ohn]
     journal: "Journal of Accounting, Auditing & Finance"
     abstract: |
