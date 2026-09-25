@@ -33,7 +33,7 @@ enableRobotsTXT = true
   [[module.mounts]]
     source = "edit"
     target = "content"
-    files = ["about.md", "blog/**"]
+    files = ["about.md", "blog/**", "! blog/.gitkeep"]   # .gitkeep keeps the empty blog/ folder in git
   [[module.mounts]]
     source = "content"
     target = "content"
