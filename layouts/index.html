@@ -13,7 +13,7 @@
 <p>&rarr; <a href="/cv.pdf"><em>Curriculum Vitae in</em> <span class="scp">pdf</span></a></p>
 </section>
 
-{{- /* Shows only once a first post exists in content/blog/. */ -}}
+{{- /* Shows only once a first post exists in edit/blog/. */ -}}
 {{ with first 10 (where site.RegularPages.ByDate.Reverse "Section" "blog") }}
 <section class="archive">
 <h1>Recent Writing</h1>
