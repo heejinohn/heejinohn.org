@@ -39,7 +39,7 @@ University of Iowa \hfill _Iowa City, IA_
 Korea University \hfill _Seoul, South Korea_  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;__B.B.A.__ in Business Administration \hfill 2006
 
-<!-- Paper entries come from papers.yaml (see papers.lua); edit them there. -->
+<!-- Paper entries come from papers.yaml in this folder; edit them there. -->
 # PUBLICATIONS
 ::: {.papers group="published"}
 :::

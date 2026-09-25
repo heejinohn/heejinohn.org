@@ -13,7 +13,7 @@ local function read_papers(path)
   return pandoc.read("---\n" .. text .. "\n---\n", "markdown").meta
 end
 
-local papers = read_papers("papers.yaml")
+local papers -- read from the file named by `-M papers=<path>` (see Makefile)
 local me_full, me_short -- set from the CV's `author` field
 
 -- "Heejin Ohn" -> "H. Ohn" (the CV abbreviates its own author)
@@ -77,7 +77,8 @@ end
 local function Meta(meta)
   me_full = stringify(meta.author)
   me_short = abbreviate(me_full)
+  papers = read_papers(meta.papers and stringify(meta.papers) or "papers.yaml")
 end
 
--- Run Meta first (to learn the author's name), then Div.
+-- Run Meta first (to learn the author and the papers file), then Div.
 return { { Meta = Meta }, { Div = Div } }

@@ -45,7 +45,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Build CV
-        run: make -C cv   # cv/papers.yaml + cv/cv.md -> static/cv.pdf
+        run: make -C cv   # edit/cv.md + edit/papers.yaml -> static/cv.pdf
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Build

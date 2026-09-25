@@ -1,5 +1,5 @@
 {{- /* Lists papers under the website groups in params.paperGroups (hugo.toml),
-       in cv/papers.yaml order. Call with the site as context: partial "paper-list.html" site */ -}}
+       in edit/papers.yaml order. Call with the site as context: partial "paper-list.html" site */ -}}
 {{- range .Params.paperGroups }}
   {{- $g := . }}
   {{- $pages := slice }}

@@ -1,6 +1,6 @@
 # Papers: the single source for the CV and the website.
 #
-# - cv/cv.md prints each list where it says ::: {.papers group="..."}.
+# - edit/cv.md prints each list where it says ::: {.papers group="..."}.
 # - The website builds the home page list, the Research page and one page
 #   per paper (the abstract is the page text) from this file.
 #

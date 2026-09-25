@@ -1,4 +1,4 @@
-{{- /* Makes one page per paper in cv/papers.yaml (mounted as site data).
+{{- /* Makes one page per paper in edit/papers.yaml (mounted as site data).
        The abstract becomes the page text. Each page gets two extra params:
        `list` (its list in papers.yaml) and `group` (its website group from
        params.paperGroups in hugo.toml). */ -}}
@@ -13,11 +13,11 @@
 {{- range $list, $papers := hugo.Data.papers -}}
   {{- $g := index $groupOf $list -}}
   {{- if not $g -}}
-    {{- errorf "cv/papers.yaml: list %q is not in any params.paperGroups in hugo.toml" $list -}}
+    {{- errorf "edit/papers.yaml: list %q is not in any params.paperGroups in hugo.toml" $list -}}
   {{- end -}}
   {{- range $i, $p := $papers -}}
     {{- if not (and $p.slug $p.title $p.authors) -}}
-      {{- errorf "cv/papers.yaml: entry %d under %q needs slug, title and authors" (add $i 1) $list -}}
+      {{- errorf "edit/papers.yaml: entry %d under %q needs slug, title and authors" (add $i 1) $list -}}
     {{- end -}}
     {{- $.AddPage (dict
           "kind" "page"
