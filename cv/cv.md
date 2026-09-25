@@ -39,18 +39,18 @@ University of Iowa \hfill _Iowa City, IA_
 Korea University \hfill _Seoul, South Korea_  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;__B.B.A.__ in Business Administration \hfill 2006
 
+<!-- Paper entries come from papers.yaml (see papers.lua); edit them there. -->
 # PUBLICATIONS
-\begin{etaremune}
-    \item Ciao-Wei Chen, Samuel J.~Melessa, Richard D.~Mergenthaler and H.~Ohn. 2025. \href{https://doi.org/10.2308/TAR-2022-0143}{``Measuring Cash Flows: A Guide for Researchers.''} \textit{The Accounting Review} 100(6): 61--86.
-\end{etaremune}
+::: {.papers group="published"}
+:::
 
 # UNDER REVIEW
-Daniel W. Collins, Raunaq S. Pungaliya, Anand M. Vijh and H. Ohn. ``Assessing Type I Error and Power of Alternative Methods of Dealing with Nonlinear Omitted Variable Bias in Tests of Earnings Management.'' \textit{Journal of Accounting, Auditing \& Finance}.
+::: {.papers group="under_review"}
+:::
 
 # WORKING PAPERS
-Daniel W. Collins, Jaewoo Kim and H. Ohn. \href{https://dx.doi.org/10.2139/ssrn.3138584}{``Do Mandatory Accounting Disclosures Impair Disclosing Firms' Competitiveness? Evidence from Mergers and Acquisitions.''}
-
-H. Ohn. ``Institutional Investors' Firm-Specific Information Acquisition during Inattention.''
+::: {.papers group="working"}
+:::
 
 # PRESENTATIONS
 American Accounting Association Annual Meeting \hfill _San Francisco, CA_ \

@@ -3,3 +3,7 @@ resources/_gen/
 .hugo_build.lock
 .DS_Store
 TODO.md
+
+# Built by `make -C cv` (and in CI on every push)
+static/cv.pdf
+cv/cv.tex

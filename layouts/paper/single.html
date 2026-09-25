@@ -2,10 +2,14 @@
 <article class="post">
   <header class="post-header">
     <h1 class="post-title">{{ .Title }}</h1>
-    <p>{{ partial "authors.html" .Params.authors }}{{ with .Params.year }} ({{ . }}){{ end }}
+    {{- $published := eq .Params.list "published" }}
+    <p>{{ partial "authors.html" .Params.authors }}
+      {{- if $published }}
+      {{- with .Params.year }} ({{ . }}){{ end }}
       {{- with .Params.journal }}. <em>{{ . }}</em>{{ end }}
       {{- with .Params.volume }} {{ . }}{{ end }}{{ with .Params.issue }}({{ . }}){{ end }}{{ with .Params.pages }}: {{ . }}{{ end }}
-      {{- if eq .Params.status "Working Papers" }} &middot; <em>Working paper</em>{{ end }}</p>
+      {{- end }}
+      {{- with .Params.label }} &middot; <em>{{ . }}</em>{{ end }}</p>
     <p>
       {{- with .Params.doi }}<a href="https://doi.org/{{ . }}" target="_blank" rel="noopener">doi:{{ . }}</a>{{ end }}
       {{- with .Params.ssrn }} &middot; <a href="{{ . }}" target="_blank" rel="noopener">SSRN</a>{{ end }}
@@ -17,9 +21,9 @@
     {{ .Content }}
 
     {{- /* A copyable BibTeX entry, built from the same fields as the citation. */ -}}
-    {{ if eq .Params.status "Published" }}
+    {{ if $published }}
     <h3>Cite</h3>
-<pre><code>@article{ {{- .File.ContentBaseName }},
+<pre><code>@article{ {{- .Params.slug }},
   author  = { {{- delimit .Params.authors " and " -}} },
   title   = { {{- .Title -}} },
   journal = { {{- .Params.journal -}} },

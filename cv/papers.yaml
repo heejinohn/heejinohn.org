@@ -1,0 +1,49 @@
+# Papers: the single source for the CV and the website.
+#
+# - cv/cv.md prints each list where it says ::: {.papers group="..."}.
+# - The website builds the home page list, the Research page and one page
+#   per paper (the abstract is the page text) from this file.
+#
+# Order within a list is the order everywhere. When a paper moves on
+# (e.g., accepted), cut its entry and paste it under the new list.
+# `slug` is the page address: heejinohn.org/research/<slug>/ -- keep it stable.
+#
+# Fields: slug, title, authors (required); year, journal, volume, issue,
+# pages, doi, ssrn, pdf, code, abstract (optional). The abstract is Markdown.
+
+published:
+  - slug: measuring-cash-flows
+    title: "Measuring Cash Flows: A Guide for Researchers"
+    authors: [Ciao-Wei Chen, Samuel J. Melessa, Richard D. Mergenthaler, Heejin Ohn]
+    year: 2025
+    journal: The Accounting Review
+    volume: 100
+    issue: 6
+    pages: "61–86"
+    doi: 10.2308/TAR-2022-0143
+    # pdf: /papers/measuring-cash-flows.pdf   # accepted manuscript, if AAA permits posting
+    # code: https://github.com/heejinohn/...
+    abstract: |
+      Cash flows play an important role in the accounting and finance literature. They are a major component of earnings, serve as a benchmark for earnings and accruals, and are an input to firm valuation. Although accrual measurement has been extensively studied, research on cash flow measurement remains limited. We review cash flow proxies researchers use in prior literature and highlight the importance of (1) identifying and defining the cash flow construct of interest based on the underlying research question and other constructs of interest and (2) selecting a cash flow proxy that minimizes measurement error and maps well into its construct. We also examine the challenges researchers face in measuring cash flows and demonstrate how measurement choices can affect the magnitude of coefficient estimates and statistical inferences. Finally, our study provides a framework researchers can follow to strengthen the construct validity of cash flow proxies.
+
+under_review:
+  - slug: nonlinear-omitted-variable-bias
+    title: "Assessing Type I Error and Power of Alternative Methods of Dealing with Nonlinear Omitted Variable Bias in Tests of Earnings Management"
+    authors: [Daniel W. Collins, Raunaq S. Pungaliya, Anand M. Vijh, Heejin Ohn]
+    journal: "Journal of Accounting, Auditing & Finance"
+    abstract: |
+      We develop analytical models to identify three (four) key parameters of Type I error (power) to evaluate the effects of important design choices used in four prior papers that propose alternative methods for dealing with the non-linearity of accruals in tests of earnings management. The key parameters for Type I errors are: (1) μ, the average value of the measured Mod-Jones discretionary accrual (DA) where event dates are randomly chosen. We refer to μ as the mean displacement (average DA scaled by lagged total assets); (2) σ, the standard deviation of the DA in a given partition; and (3) n, the sample size. Power is a function of these three parameters plus δ, the amount of earnings management seeded into raw accruals. Prior papers have used year-over-year changes in selected balance sheet (BS) accounts minus depreciation to calculate accruals, sample sizes of 100 to evaluate Type I error and earnings management seeds of 1% to 4% of lagged assets to evaluate power. [Chen et al. (2025)](/research/measuring-cash-flows/) identify two sources of error in these BS measures of accruals: (1) Non-articulation error (NON_ART); and (2) EXCLUSION error. We show that these two sources of error in BS accruals introduce significant non-linearity into accruals that contribute to moderate (substantial) Type I error in sample sizes of 100 (1,000 observations). Two models—Mod-Jones + quintile dummies and Mod-Jones + restricted cubic spline along ROA, SG, MB and TA dimensions—exhibit the lowest Type I errors and greatest power among the models considered.
+
+working:
+  - slug: mandatory-disclosure-competitiveness
+    title: "Do Mandatory Accounting Disclosures Impair Disclosing Firms' Competitiveness? Evidence from Mergers and Acquisitions"
+    authors: [Daniel W. Collins, Jaewoo Kim, Heejin Ohn]
+    ssrn: https://doi.org/10.2139/ssrn.3138584
+    abstract: |
+      This paper examines whether mandatory accounting disclosures in financial reports impair disclosing firms’ competitiveness by inducing competitors to take actions. To capture firm-level variation in product market competition, we rely on the product similarity measure developed by Hoberg and Phillips (2016). Using M&A-related disclosures that are mandated by materiality thresholds, we find that disclosing firms experience a disproportionate increase in product similarity subsequent to M&A transactions relative to non-disclosing M&A firms. Cross-sectional analyses reveal that the effect is more pronounced when the firms obtain greater synergy gains via M&A or achieve greater product differentiation in the year of an M&A. We also document that rivals of disclosing firms are more likely to engage in an M&A transaction in the following year relative to rivals of non-disclosing firms, and that competition between an acquirer and rivals increases both when the acquirer discloses and when rivals conduct M&A. Collectively, our findings suggest that mandatory M&A-related sales and profit disclosures have an adverse impact on disclosing firms’ competitiveness in product markets.
+
+  - slug: institutional-investors-inattention
+    title: "Institutional Investors' Firm-Specific Information Acquisition during Inattention"
+    authors: [Heejin Ohn]
+    abstract: |
+      Earnings conference calls are salient sources of firm-specific information that provide both hard and soft information to investors. In this paper, I find that institutional investors participate more actively in earnings conference calls held by firms that receive less attention than their peers prior to conference calls. I construct a measure of relative inattention using the Bloomberg Heat Score, which captures the aggregate search activities of institutional investors at the firm level. Using a broad set of earnings conference call transcripts, I identify participants affiliated with institutional investors and their dialogue to examine the association between institutional investors' inattention and their activities during earnings conference calls. I show that institutional investors appear more often, ask more questions, and request more guidance in conference calls held by firms that receive less attention before the calls. Collectively, the results indicate that institutional investors compensate for the lack of firm-specific information with conference call participation, despite potential costs of publicly revealing their information acquisition.

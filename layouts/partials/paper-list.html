@@ -1,11 +1,17 @@
-{{- /* Lists papers grouped by status. Call with the site as context: partial "paper-list.html" site */ -}}
-{{- $papers := where .RegularPages "Type" "paper" -}}
-{{- range slice "Published" "Working Papers" }}
-  {{- $status := . }}
-  {{- with where $papers "Params.status" $status }}
-<h3>{{ $status }}</h3>
+{{- /* Lists papers under the website groups in params.paperGroups (hugo.toml),
+       in cv/papers.yaml order. Call with the site as context: partial "paper-list.html" site */ -}}
+{{- range .Params.paperGroups }}
+  {{- $g := . }}
+  {{- $pages := slice }}
+  {{- range .lists }}
+    {{- range index hugo.Data.papers . }}
+      {{- $pages = $pages | append (site.GetPage (printf "/research/%s" .slug)) }}
+    {{- end }}
+  {{- end }}
+  {{- with $pages }}
+<h3>{{ $g.heading }}</h3>
 <ul class="publication">
-    {{- range .ByWeight }}
+    {{- range . }}
   <li>{{ partial "citation.html" . }}
     {{- with .Params.pdf }} <a class="scp" href="{{ . }}">&middot; pdf</a>{{ end }}
     {{- with .Params.code }} <a class="scp" href="{{ . }}">&middot; code</a>{{ end }}</li>

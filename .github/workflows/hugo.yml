@@ -24,13 +24,28 @@ jobs:
     runs-on: ubuntu-latest
     env:
       HUGO_VERSION: 0.166.0   # same version as on the Mac; the theme's Sass needs the "extended" build
+      PANDOC_VERSION: "3.8"   # same version as on the Mac
     steps:
       - name: Install Hugo
         run: |
           wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb
           sudo dpkg -i ${{ runner.temp }}/hugo.deb
+      - name: Install pandoc
+        run: |
+          wget -O ${{ runner.temp }}/pandoc.deb https://github.com/jgm/pandoc/releases/download/${PANDOC_VERSION}/pandoc-${PANDOC_VERSION}-1-amd64.deb
+          sudo dpkg -i ${{ runner.temp }}/pandoc.deb
+      - name: Install LaTeX (only the packages the CV template uses; cached between runs)
+        uses: teatimeguest/setup-texlive-action@v3
+        with:
+          packages: |
+            scheme-basic
+            amsmath iftex geometry hyperref microtype upquote parskip
+            etaremune fontawesome sectsty titlesec fancyhdr lastpage
+            datetime fmtcount psnfss mathpazo fpl palatino
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Build CV
+        run: make -C cv   # cv/papers.yaml + cv/cv.md -> static/cv.pdf
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Build
@@ -43,6 +58,7 @@ jobs:
           path: ./public
 
   deploy:
+    if: github.ref == 'refs/heads/main'   # other branches only test the build
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}

@@ -22,6 +22,18 @@ enableRobotsTXT = true
     url = "/cv.pdf"
     weight = 3
 
+# Papers live in cv/papers.yaml, shared with the CV. Hugo reads it as
+# site data (site.Data.papers); content/research/_content.gotmpl turns
+# each entry into a page.
+[module]
+  [[module.mounts]]
+    source = "data"
+    target = "data"
+  [[module.mounts]]
+    source = "cv"
+    target = "data"
+    files = ["papers.yaml"]
+
 [permalinks]
   blog = "/blog/:year/:month/:slug/"
 
@@ -30,8 +42,6 @@ enableRobotsTXT = true
   since = "2026"
   logoTitle = "heejin ohn"
   description = "Heejin Ohn, accounting researcher."
-  # Change this one line when the appointment changes.
-  affiliation = 'Assistant Professor of Accounting at the <a href="https://www.ou.edu/price">Price College of Business</a>, University of Oklahoma'
   dateFormatToUse = "January 2, 2006"
   fancybox = false
   mathjax = false
@@ -47,6 +57,21 @@ enableRobotsTXT = true
     name = "Google Scholar"
     url = "https://scholar.google.com/citations?hl=en&user=2n5Ev_MAAAAJ"
     icon = "googlescholar"
+  # How the lists in cv/papers.yaml are grouped on the website, in display
+  # order. The CV keeps its own sections (e.g., Under Review). A list in
+  # papers.yaml that is not named here stops the build with an error, so a
+  # paper can never silently go missing. `label` is shown on a paper's page.
+  [[params.paperGroups]]
+    heading = "Published"
+    lists = ["published"]
+  [[params.paperGroups]]
+    heading = "Working Papers"
+    label = "Working paper"
+    lists = ["under_review", "working"]
+  [[params.paperGroups]]
+    heading = "Work in Progress"
+    label = "Work in progress"
+    lists = ["in_progress"]
   [params.publicCDN]
     enable = true
     jquery = '<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>'
