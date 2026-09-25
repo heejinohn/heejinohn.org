@@ -1,7 +1,11 @@
 {{- define "content" -}}
 
-{{- /* Bio comes from content/about.md so it is written in one place. */ -}}
-{{ with site.GetPage "/about" }}{{ .Content }}{{ end }}
+{{- /* Introduction from edit/about.md: the text above <!--more-->, then its
+       homeClosing line. The About page itself shows the full text. */ -}}
+{{ with site.GetPage "/about" }}
+{{ .Summary }}
+<p>{{ with .Params.homeClosing }}{{ . | markdownify }} {{ end }}&rarr; <a href="{{ .RelPermalink }}"><em>More about me.</em></a></p>
+{{ end }}
 
 <section class="archive">
 <h1>Research</h1>

@@ -5,7 +5,7 @@ Edit files here, push to `main`, and GitHub rebuilds the CV and the website.
 
 | File / folder | What it is | Where it shows up |
 |---|---|---|
-| `about.md` | Your bio | Home page and About page |
+| `about.md` | Your bio | About page (all of it); home page (text above `<!--more-->`, plus `homeClosing`) |
 | `papers.yaml` | Every paper, with abstracts | CV paper sections, home page list, Research page, one page per paper |
 | `cv.md` | The rest of the CV | `heejinohn.org/cv.pdf` |
 | `blog/` | Blog posts | Blog page; the menu item appears with the first published post |

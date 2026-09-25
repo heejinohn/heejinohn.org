@@ -41,15 +41,17 @@ enableRobotsTXT = true
     source = "data"
     target = "data"
   [[module.mounts]]
-    source = "edit"
-    target = "data"
-    files = ["papers.yaml"]
+    # A single-file mount: mounting all of edit/ as data too would make the
+    # preview server treat edits to about.md as data and skip rebuilding it.
+    source = "edit/papers.yaml"
+    target = "data/papers.yaml"
   [[module.mounts]]
     source = "static"
     target = "static"
   [[module.mounts]]
     source = "edit/files"
     target = "static"
+    files = ["! .gitkeep"]   # placeholder that keeps the empty folder in git
 
 [permalinks]
   blog = "/blog/:year/:month/:slug/"
