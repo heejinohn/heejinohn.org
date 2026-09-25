@@ -4,6 +4,9 @@
 #                 while it runs, saving edit/cv.md or edit/papers.yaml
 #                 rebuilds the PDF too (cv/watch.sh)
 
+# Plain `make` runs `all` (otherwise make would pick the first target below).
+.DEFAULT_GOAL := all
+
 # Hugo is pinned in Homebrew; GitHub uses HUGO_VERSION in the workflow.
 # Warn (without stopping) when the two differ.
 HUGO_CI    := $(shell sed -n 's/^ *HUGO_VERSION: *\([0-9.]*\).*/\1/p' .github/workflows/hugo.yml)
