@@ -35,9 +35,15 @@ end
 
 -- One citation, written as Markdown and parsed back into pandoc elements,
 -- so special characters (&, %, _) are escaped for LaTeX automatically.
-local function citation(p)
+-- Published papers link only to the official DOI; all others only to SSRN.
+local function citation(p, published)
   local f = function(key) return p[key] and stringify(p[key]) or nil end
-  local url = (f("doi") and "https://doi.org/" .. f("doi")) or f("ssrn")
+  local url
+  if published then
+    url = f("doi") and "https://doi.org/" .. f("doi")
+  else
+    url = f("ssrn")
+  end
   local title = '"' .. f("title") .. '."'
   local md = author_list(p.authors) .. ". "
   if f("year") then md = md .. f("year") .. ". " end
@@ -62,7 +68,7 @@ local function Div(el)
     local blocks = { pandoc.RawBlock("latex", "\\begin{etaremune}") }
     for _, p in ipairs(list) do
       local item = pandoc.Inlines({ pandoc.RawInline("latex", "\\item ") })
-      item:extend(citation(p))
+      item:extend(citation(p, true))
       blocks[#blocks + 1] = pandoc.Plain(item)
     end
     blocks[#blocks + 1] = pandoc.RawBlock("latex", "\\end{etaremune}")

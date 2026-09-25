@@ -21,7 +21,8 @@ published:
     issue: 6
     pages: "61–86"
     doi: 10.2308/TAR-2022-0143
-    # pdf: /papers/measuring-cash-flows.pdf   # accepted manuscript, if AAA permits posting
+    ssrn: https://doi.org/10.2139/ssrn.4631410   # preprint; AAA allows it with the citation + DOI
+    # pdf: not on this site (AAA allows the accepted manuscript only in an institutional repository)
     # code: https://github.com/heejinohn/...
     abstract: |
       Cash flows play an important role in the accounting and finance literature. They are a major component of earnings, serve as a benchmark for earnings and accruals, and are an input to firm valuation. Although accrual measurement has been extensively studied, research on cash flow measurement remains limited. We review cash flow proxies researchers use in prior literature and highlight the importance of (1) identifying and defining the cash flow construct of interest based on the underlying research question and other constructs of interest and (2) selecting a cash flow proxy that minimizes measurement error and maps well into its construct. We also examine the challenges researchers face in measuring cash flows and demonstrate how measurement choices can affect the magnitude of coefficient estimates and statistical inferences. Finally, our study provides a framework researchers can follow to strengthen the construct validity of cash flow proxies.
