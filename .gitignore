@@ -4,6 +4,9 @@ resources/_gen/
 .DS_Store
 TODO.md
 
+# Private blog drafts (`make draft`); move a post to edit/blog/ to publish it
+edit/drafts/
+
 # Built by `make -C cv` (and in CI on every push)
 static/cv.pdf
 cv/cv.tex

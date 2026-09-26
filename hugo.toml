@@ -24,6 +24,8 @@ enableRobotsTXT = true
 
 # Everything edited regularly lives in edit/. These mounts make Hugo see
 #   edit/about.md, edit/blog/  as pages   (alongside content/)
+#   edit/drafts/               as more blog posts; git-ignored, so only local
+#                              previews see it (`make draft`, `make preview-drafts`)
 #   edit/papers.yaml           as site data (hugo.Data.papers; shared with the CV)
 #   edit/files/                as files served at the site root (alongside static/)
 # Listing a mount replaces Hugo's default for that folder, so the defaults
@@ -34,6 +36,9 @@ enableRobotsTXT = true
     source = "edit"
     target = "content"
     files = ["about.md", "blog/**", "! blog/.gitkeep"]   # .gitkeep keeps the empty blog/ folder in git
+  [[module.mounts]]
+    source = "edit/drafts"
+    target = "content/blog"
   [[module.mounts]]
     source = "content"
     target = "content"

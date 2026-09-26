@@ -3,6 +3,8 @@
 #   make preview  build the CV PDF, then preview at http://localhost:1313;
 #                 while it runs, saving edit/cv.md or edit/papers.yaml
 #                 rebuilds the PDF too (cv/watch.sh)
+#   make preview-drafts   the same, but also shows draft posts
+#   make draft title=my-post   start a private draft at edit/drafts/my-post.md
 
 # Plain `make` runs `all` (otherwise make would pick the first target below).
 .DEFAULT_GOAL := all
@@ -24,6 +26,19 @@ cv:
 # One shell line: start the watcher in the background, make sure it is
 # stopped when this shell exits (Ctrl-C included), then run the server.
 preview: cv check-hugo
-	@cv/watch.sh & trap 'kill $$! 2>/dev/null' EXIT INT TERM; hugo server
+	@cv/watch.sh & trap 'kill $$! 2>/dev/null' EXIT INT TERM; hugo server $(HUGO_FLAGS)
 
-.PHONY: all cv preview check-hugo
+preview-drafts:
+	@$(MAKE) preview HUGO_FLAGS=-D
+
+# `hugo new content` always writes into edit/blog/ (the first matching mount),
+# so create the post there from archetypes/blog.md, then move it to the
+# git-ignored edit/drafts/. Refuses to overwrite an existing post.
+draft:
+	@[ -n "$(title)" ] || { echo "Usage: make draft title=my-post-title"; exit 1; }
+	@[ ! -e edit/drafts/$(title).md ] && [ ! -e edit/blog/$(title).md ] || { echo "A post named $(title).md already exists."; exit 1; }
+	@mkdir -p edit/drafts
+	@hugo new content blog/$(title).md >/dev/null && mv edit/blog/$(title).md edit/drafts/
+	@echo "Created edit/drafts/$(title).md (private). To publish: move it to edit/blog/, set draft: false, commit and push."
+
+.PHONY: all cv preview preview-drafts draft check-hugo
