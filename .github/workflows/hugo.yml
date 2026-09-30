@@ -23,7 +23,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      HUGO_VERSION: 0.166.0   # keep equal to the Mac's (pinned in Homebrew; `make` warns on a mismatch); the theme's Sass needs the "extended" build
+      HUGO_VERSION: 0.167.0   # keep equal to the Mac's (pinned in Homebrew; `make` warns on a mismatch); the theme's Sass needs the "extended" build
     steps:
       - name: Checkout
         uses: actions/checkout@v4
