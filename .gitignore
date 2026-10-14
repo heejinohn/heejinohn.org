@@ -10,3 +10,6 @@ edit/drafts/
 # Built by `make -C cv` (and in CI on every push)
 static/cv.pdf
 cv/cv.tex
+
+# Quarto cache
+.quarto/
