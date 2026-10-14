@@ -76,6 +76,7 @@ University of Oklahoma \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Steed School of Accounting Workshop Series Committee \hfill 2020 -- 2025
 
 # AWARDS AND HONORS
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; OU Steed School of Accounting Outstanding Teaching Award \hfill 2026 \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; OU Price College Tamara Pullin Partners in Learnings Program \hfill 2022 \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; AAA Deloitte Foundation/J. Michael Cook Doctoral Consortium Fellowship \hfill 2018 \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Mary L. Collins Doctoral Fellowship Award \hfill 2016
